@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salaah Task Manager</title>
+  <meta name="description" content="A simple, responsive task manager. Add, complete, delete and filter tasks. Saved in your browser.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="head">
+      <h1>Today's tasks</h1>
+      <p class="count" id="count" aria-live="polite">0 pending</p>
+    </header>
+
+    <form class="add" id="addForm" autocomplete="off">
+      <label for="taskInput" class="sr">New task</label>
+      <input id="taskInput" type="text" placeholder="What needs to get done?" maxlength="120" required>
+      <button type="submit">Add task</button>
+    </form>
+
+    <p class="error" id="error" role="alert" hidden></p>
+
+    <div class="filters" role="group" aria-label="Filter tasks">
+      <button class="filter active" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter" data-filter="pending" aria-pressed="false">Pending</button>
+      <button class="filter" data-filter="completed" aria-pressed="false">Completed</button>
+    </div>
+
+    <ul class="list" id="list"></ul>
+    <p class="empty" id="empty" hidden></p>
+
+    <footer class="foot">
+      <button class="link" id="clearDone" type="button">Clear completed</button>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
